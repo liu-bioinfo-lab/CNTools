@@ -7,7 +7,7 @@ The software denpendencies are listed in `env.yml` and `pyproject.toml`. The req
 ```
 conda env create -f env.yml
 conda activate CNTools
-pip install .
+pip install -e .
 ```
 
 ## Instructions for use
