@@ -1,7 +1,7 @@
 # CNTools
 
 ## System requirements
-The software denpendencies are listed in `env.yml` and `pyproject.toml`. The software is independent of operating system. The version the software has been tested on is v2.0.0.
+The software denpendencies are listed in `env.yml` and `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.0.0.
 
 ## Installation guide
 ```
