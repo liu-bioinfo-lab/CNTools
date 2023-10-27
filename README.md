@@ -14,7 +14,7 @@ pip install -e .
 ## Instructions for use
 
 ### Idenfity and smooth cellular neighborhoods
-See `tests/test_crc.ipynb`, `tests/test_t2d.ipynb`, and `tests/test_hlt.ipynb`.
+See `tests/test_crc.ipynb` for CRC dataset, `tests/test_t2d.ipynb` for T2D dataset, and `tests/test_hlt.ipynb` for HLT dataset.
 
 ### Analyze cellular neighborhoods
 See jupyter notebooks in the `tests/analysis` folder.
