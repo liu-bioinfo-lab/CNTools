@@ -1,0 +1,43 @@
+[project]
+name = "CNTools"
+version = "0.0.0"
+description = "A package for identifying cellular neighborhoods"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+keywords = []
+authors = [
+    {name = "Yicheng Tao", email = "yctao@umich.com"},
+]
+maintainers = [
+    {name = "Yicheng Tao", email = "yctao@umich.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+    "cython==0.29.28",
+    "gdown==4.6.4",
+    "jupyter==1.0.0",
+    "matplotlib==3.4.2",
+    "networkx==2.6.2",
+    "numpy==1.20.3",
+    "pandas==1.2.4",
+    "pip==23.2.1",
+    "pydot==1.4.2",
+    "python-louvain==0.15",
+    "scikit-learn==0.24.2",
+    "scipy==1.6.2",
+    "seaborn==0.11.2",
+    "shapely==1.8.4",
+    "statsmodels==0.12.2",
+    "tensorly==0.5.1",
+    "tqdm==4.62.1",
+    "spatial-lda==0.1.3",
+]
+
+[project.urls]
+Repository = "https://github.com/liu-bioinfo-lab/CNTools"
