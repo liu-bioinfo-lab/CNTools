@@ -4,7 +4,11 @@
 The software denpendencies are listed in `env.yml` and `pyproject.toml`. The required operating systems are Linux, MacOS, and Windows. The version the software has been tested on is v2.0.0.
 
 ## Installation guide
-Create the conda environment by `conda env create -f env.yml`, and then install CNTools package by `pip install .`
+```
+conda env create -f env.yml
+conda activate CNTools
+pip install .
+```
 
 ## Instructions for use
 
