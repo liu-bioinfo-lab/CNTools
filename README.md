@@ -4,8 +4,12 @@
 The software denpendencies are listed in `env.yml` and `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.0.0.
 
 ## Installation guide
+First download the package, e.g.,
 ```
 git clone https://github.com/liu-bioinfo-lab/CNTools.git
+```
+Then, run following commands to install.
+```
 cd CNTools
 conda env create -f env.yml
 conda activate CNTools
