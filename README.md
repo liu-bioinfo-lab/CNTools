@@ -5,10 +5,11 @@ The software denpendencies are listed in `env.yml` and `pyproject.toml`. The sof
 
 ## Installation guide
 ```
+git clone https://github.com/liu-bioinfo-lab/CNTools.git
 cd CNTools
 conda env create -f env.yml
 conda activate CNTools
-pip install -e .
+python -m pip install -e .
 ```
 
 ## Instructions for use
