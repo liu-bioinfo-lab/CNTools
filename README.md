@@ -8,7 +8,7 @@ First, download this package from github, e.g.,
 ```
 git clone https://github.com/liu-bioinfo-lab/CNTools.git
 ```
-Then, run following commands in terminal to install.
+Then, run following commands to install.
 ```
 cd CNTools
 conda env create -f env.yml
