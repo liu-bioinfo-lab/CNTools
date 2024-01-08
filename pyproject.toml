@@ -1,6 +1,6 @@
 [project]
 name = "cntools"
-version = "2.0.1"
+version = "2.0.2"
 description = "A package for identifying cellular neighborhoods"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -20,7 +20,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    "cython==0.28.5",
+    "cython==3.0.7",
     "gdown==4.6.4",
     "jupyter==1.0.0",
     "matplotlib==3.4.2",
@@ -45,5 +45,5 @@ Homepage = "https://github.com/liu-bioinfo-lab/CNTools"
 Issues = "https://github.com/liu-bioinfo-lab/CNTools/issues"
 
 [build-system]
-requires = ["setuptools>=61.0", "wheel", "cython==0.28.5", "scikit-learn==0.24.2", "numpy==1.20.3"]
+requires = ["setuptools>=61.0", "wheel", "cython==3.0.7", "scikit-learn==0.24.2", "numpy==1.20.3"]
 build-backend = "setuptools.build_meta"
