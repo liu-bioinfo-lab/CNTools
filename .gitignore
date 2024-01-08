@@ -1,7 +1,12 @@
+*.pyc
+*.so
+*.pyd
+*.c
+*.cpp
 *.egg-info
 .DS_Store
 .ipynb
 __pycache__
 build/
 dist/
-tests/data
+cntools/tests/data

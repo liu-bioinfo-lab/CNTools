@@ -1,19 +1,13 @@
 # CNTools
 
 ## System requirements
-The software denpendencies are listed in `env.yml` and `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.0.0.
+The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.0.1.
 
 ## Installation guide
-First, download this package from github, e.g.,
+As we need a conda package pydot=1.4.2 (not a pip one), the package can be installed by
 ```
-git clone https://github.com/liu-bioinfo-lab/CNTools.git
-```
-Then, run following commands to install.
-```
-cd CNTools
-conda env create -f env.yml
-conda activate CNTools
-python -m pip install -e .
+conda create -n cntools python=3.8 pydot=1.4.2
+pip install cntools
 ```
 
 ## Instructions for use

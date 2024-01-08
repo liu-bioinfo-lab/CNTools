@@ -1,25 +1,26 @@
 [project]
-name = "CNTools"
-version = "0.0.0"
+name = "cntools"
+version = "2.0.0"
 description = "A package for identifying cellular neighborhoods"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
-keywords = []
+keywords = ["cellular neighborhoods"]
 authors = [
-    {name = "Yicheng Tao", email = "yctao@umich.com"},
+    {name = "Yicheng Tao", email = "yctao@umich.edu" }
 ]
 maintainers = [
-    {name = "Yicheng Tao", email = "yctao@umich.com"}
+    {name = "Yicheng Tao", email = "yctao@umich.edu" }
 ]
 classifiers = [
-    "Programming Language :: Python :: 3",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent"
+    "Programming Language :: Python :: 3",
 ]
-
 dependencies = [
-    "cython==0.29.28",
+    "cython==0.28.5",
     "gdown==4.6.4",
     "jupyter==1.0.0",
     "matplotlib==3.4.2",
@@ -40,4 +41,9 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/liu-bioinfo-lab/CNTools"
+Homepage = "https://github.com/liu-bioinfo-lab/CNTools"
+Issues = "https://github.com/liu-bioinfo-lab/CNTools/issues"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "cython==0.28.5", "scikit-learn==0.24.2", "numpy==1.20.3"]
+build-backend = "setuptools.build_meta"
