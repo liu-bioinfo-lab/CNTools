@@ -9,4 +9,4 @@
 __pycache__
 build/
 dist/
-cntools/tests/data
+tests/data
