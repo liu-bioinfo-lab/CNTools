@@ -1,6 +1,6 @@
 [project]
 name = "cntools"
-version = "2.0.4"
+version = "2.0.5"
 description = "A package for identifying cellular neighborhoods"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -13,11 +13,12 @@ maintainers = [
     {name = "Yicheng Tao", email = "yctao@umich.edu" }
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Development Status :: 3 - Alpha",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
 ]
 dependencies = [
     "cython==3.0.7",
