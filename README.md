@@ -1,13 +1,13 @@
 # CNTools
 
 ## System requirements
-The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.0.2.
+The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.0.3.
 
 ## Installation guide
-As we need a conda package pydot=1.4.2 (not a pip one), the package must be installed by
+As we need a conda package pydot=1.4.2 (not a pip one), the package should be installed by
 ```
 conda create -n cntools python=3.8 pydot=1.4.2
-pip install cntools
+python -m pip install cntools
 ```
 
 ## Instructions for use
