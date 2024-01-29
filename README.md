@@ -7,6 +7,7 @@ The software denpendencies are listed in `pyproject.toml`. The software is indep
 As we need a conda package pydot=1.4.2 (not a pip one), the package should be installed by
 ```
 conda create -n cntools python=3.8 pydot=1.4.2
+conda activate cntools
 python -m pip install cntools
 ```
 
