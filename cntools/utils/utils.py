@@ -9,6 +9,7 @@ def cns_info(ds, n_cns, cns):
     for sample in data:
         for image in data[sample]:
             graph = nx.Graph(data[sample][image].edge_indices)
+            graph.add_nodes_from([i for i in range(data[sample][image].n_cells)])
             for edge in graph.edges:
                 if cns[sample][image][edge[0]] != cns[sample][image][edge[1]]:
                     graph.remove_edge(edge[0], edge[1])
