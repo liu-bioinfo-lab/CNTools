@@ -1,7 +1,7 @@
 # CNTools
 
 ## System requirements
-The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.1.0.
+The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.1.0. *Do not work on clang 16 because of some C++ compile error, which may happen when you have latest ana/mini conda (e.g., 24.3.0).*
 
 ## Installation guide
 As we need a conda package pydot=1.4.2 (not a pip one), the package should be installed by
