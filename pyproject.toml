@@ -1,6 +1,6 @@
 [project]
 name = "cntools"
-version = "2.1.0"
+version = "2.1.9"
 description = "A package for identifying cellular neighborhoods"
 readme = "README.md"
 requires-python = ">=3.8"

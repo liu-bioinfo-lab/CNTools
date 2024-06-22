@@ -12,8 +12,29 @@ def prep_crc(df):
     df = df[df['CT'] != 'dirt']
     df['Group'] = df['Group'].apply(lambda r: ('CLR' if r == 1 else 'DII'))
     df['CT'] = df['CT'].apply(lambda r: r[0].upper() + r[1:])
-    df = df[Dataset.KEY_COLS + ['CD4+ICOS+', 'CD4+Ki67+', 'CD4+PD-1+', 'CD8+ICOS+', 'CD8+Ki67+', 'CD8+PD-1+', 'Treg-ICOS+', 'Treg-Ki67+', 'Treg-PD-1+']]
+    df = df[Dataset.KEY_COLS + ['CD4+ICOS+', 'CD4+Ki67+', 'CD4+PD-1+', 'CD8+ICOS+', 'CD8+Ki67+', 'CD8+PD-1+', 'Treg-ICOS+', 'Treg-Ki67+', 'Treg-PD-1+', 'CD68+CD163+ICOS+', 'CD68+CD163+Ki67+', 'CD68+CD163+PD-1+']]
+    df = df.rename(columns={'CD68+CD163+ICOS+': 'Macs-ICOS+', 'CD68+CD163+Ki67+': 'Macs-Ki67+', 'CD68+CD163+PD-1+': 'Macs-PD-1+'})
     return df
+
+
+def prep_crc_ori(df, no_dirt=False):
+    df = df.rename(columns={'groups': 'Group', 'patients': 'Sample', 'File Name': 'Image', 'X:X': 'X', 'Y:Y': 'Y', 'ClusterName': 'CT'})
+    if no_dirt:
+        df = df[~df['neighborhood number final'].isna()]
+        df = df[df['CT'] != 'dirt']
+    df['Group'] = df['Group'].apply(lambda r: ('CLR' if r == 1 else 'DII'))
+    df['CT'] = df['CT'].apply(lambda r: r[0].upper() + r[1:])
+    cns = {}
+    for sample, df_sample in df.groupby('Sample', sort=False):
+        cns[sample] = {}
+        for image, df_image in df_sample.groupby('Image', sort=False):
+            if no_dirt:
+                cns[sample][image] = df_image['neighborhood number final'].to_numpy(dtype=int) - 1
+            else:
+                cns[sample][image] = df_image['neighborhood10'].to_numpy(dtype=int)
+    df = df[Dataset.KEY_COLS + ['CD4+ICOS+', 'CD4+Ki67+', 'CD4+PD-1+', 'CD8+ICOS+', 'CD8+Ki67+', 'CD8+PD-1+', 'Treg-ICOS+', 'Treg-Ki67+', 'Treg-PD-1+', 'CD68+CD163+ICOS+', 'CD68+CD163+Ki67+', 'CD68+CD163+PD-1+']]
+    df = df.rename(columns={'CD68+CD163+ICOS+': 'Macs-ICOS+', 'CD68+CD163+Ki67+': 'Macs-Ki67+', 'CD68+CD163+PD-1+': 'Macs-PD-1+'})
+    return df, cns
 
 
 def prep_t2d(df):

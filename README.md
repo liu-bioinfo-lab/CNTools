@@ -1,7 +1,7 @@
 # CNTools
 
 ## System requirements
-The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems. The version the software has been tested on is v2.1.0. *Do not work on clang 16 because of some C++ compile error, which may happen when you have latest ana/mini conda (e.g., 24.3.0).*
+The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems. The version tested is v2.1.9. *We tested on MacOS M1 Pro, Sonoma 14.4.1, conda 23.5.1, Clang 15.0.7; Dell Precision 3440, Windows 11 Enterprise, conda 23.11.0, MSVC 14.36.32532.0; Red Hat Enterprise Linux 7, conda 24.3.0, GCC 11.2.0. We recommand using a C++ compiler older than or equal to ours, in order to aviod possible compiling probles.*
 
 ## Installation guide
 As we need a conda package pydot=1.4.2 (not a pip one), the package should be installed by

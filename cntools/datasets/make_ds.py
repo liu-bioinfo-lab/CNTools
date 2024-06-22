@@ -12,22 +12,21 @@ class Dataset():
         self.ct_order = ct_order if ct_order else sorted(list(df['CT'].unique()))
         self.n_cells = len(df)
         self.n_cts = len(self.ct_order)
-        self.group2sample, self.data, self.data_tpl, self.ct_counts = self.make_data(df)
+        self.group2sample, self.sample2group, self.data, self.data_tpl, self.ct_counts = self.make_data(df)
         self.cts_sg_to_oh()
 
     def make_data(self, df):
-        group2sample = {}
+        group2sample = {k: list(v) for k, v in df[['Sample', 'Group']].drop_duplicates().groupby('Group')['Sample'].unique().to_dict().items()}
+        sample2group = df.set_index('Sample')['Group'].to_dict()
         data, data_tpl = {}, {}
         ct_counts = np.zeros(self.n_cts, dtype=int)
-        for group, df_group in df.groupby('Group', sort=False):
-            group2sample[group] = sorted(list(df_group['Sample'].unique()))
         for sample, df_sample in df.groupby('Sample', sort=False):
             data[sample], data_tpl[sample] = {}, {}
             for image, df_image in df_sample.groupby('Image', sort=False):
                 data[sample][image], data_tpl[sample][image] = self.make_image(df_image), []
                 for ct, ct_count in Counter(data[sample][image].cts).items():
                     ct_counts[ct] += ct_count
-        return group2sample, data, data_tpl, ct_counts
+        return group2sample, sample2group, data, data_tpl, ct_counts
 
     class Image():
         def __init__(self, locs, cts, edge_indices):

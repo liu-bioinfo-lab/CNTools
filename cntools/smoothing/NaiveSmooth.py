@@ -92,5 +92,5 @@ class NaiveSmooth(Base):
                     feats_image = np.array(feats_image)
                     cns_smoothed[sample][image] = remove_small(data[sample][image], cns[sample][image], feats_image, self.s)
         if self.verbose:
-            cns_info(self.ds, self.n_cns, cns_smoothed)
+            cns_info(self.ds.data, self.n_cns, cns_smoothed)
         return cns_smoothed

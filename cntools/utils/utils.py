@@ -3,8 +3,7 @@ import numpy as np
 from scipy.sparse import csr_matrix
 
 
-def cns_info(ds, n_cns, cns):
-    data = ds.data
+def cns_info(data, n_cns, cns):
     info_ent, info_pat, info_size = {i: [] for i in range(n_cns)}, np.zeros(n_cns), np.zeros(n_cns)
     for sample in data:
         for image in data[sample]:
@@ -25,7 +24,9 @@ def cns_info(ds, n_cns, cns):
             p = p[p.nonzero()]
             info_ent[i] = -(p * np.log2(p)).sum()
     info_ent = np.array(list(info_ent.values()))
-    print(f'Entropy: {(info_ent * info_size / info_size.sum()).sum():.3f}, Size: {sum(info_size) / sum(info_pat):.2f}')
+    entropy, size = (info_ent * info_size / info_size.sum()).sum(), sum(info_size) / sum(info_pat)
+    print(f'Entropy: {entropy:.3f}, Size: {size:.2f}')
+    return entropy, size
 
 
 def delauney_edges(ds):

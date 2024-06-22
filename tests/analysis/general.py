@@ -170,3 +170,9 @@ def get_pathcells(query_database, query_dict_list):
     if len(query_database)==1:
         return out[0]
     return out
+
+def cns_remap(cns, remap):
+    for sample in cns:
+        for image in cns[sample]:
+            cns[sample][image] = np.array(remap)[cns[sample][image]]
+    return cns

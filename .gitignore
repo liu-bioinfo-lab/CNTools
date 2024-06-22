@@ -10,3 +10,7 @@ __pycache__
 build/
 dist/
 tests/data
+
+notes
+upload_test.sh
+upload.sh

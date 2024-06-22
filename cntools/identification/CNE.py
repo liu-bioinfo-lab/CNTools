@@ -34,11 +34,12 @@ class CNE(Base):
         Intermediate features for each cell.
     """
 
-    def __init__(self, n_cns, perp, lam=0.25, max_neighbors=30, exclude_cts=[], seed=0, verbose=True):
+    def __init__(self, n_cns, perp, lam=0.25, max_neighbors=30, normalize=True, exclude_cts=[], seed=0, verbose=True):
         super().__init__(n_cns, exclude_cts, seed, verbose)
         self.perp = perp
         self.lam = lam
         self.max_neighbors = max_neighbors
+        self.normalize = normalize
     
     def fit(self, ds):
         data = ds.data
@@ -65,10 +66,11 @@ class CNE(Base):
         feats = np.delete(feats, exclude_ids, axis=1)
         ct_counts = np.delete(ds.ct_counts, exclude_ids, axis=0)
         
-        feats = normalize(feats, norm='l1', axis=1) * np.log(ct_counts.sum() / (ct_counts + 1))
+        if self.normalize:
+            feats = normalize(feats, norm='l1', axis=1) * np.log(ct_counts.sum() / (ct_counts + 1))
         cns = ds.flat_to_dic(KMeans_reg(n_clusters=self.n_cns, random_state=self.seed, lam=self.lam, edges=delauney_edges(ds)).fit_predict(feats))
 
         self.feats = feats
         if self.verbose:
-            cns_info(ds, self.n_cns, cns)
+            cns_info(ds.data, self.n_cns, cns)
         return cns

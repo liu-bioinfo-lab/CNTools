@@ -126,5 +126,5 @@ class HMRF(Base):
         
         cns_smoothed = cns_oh_to_sg(cns_oh_curr)
         if self.verbose:
-            cns_info(self.ds, self.n_cns, cns_smoothed)
+            cns_info(self.ds.data, self.n_cns, cns_smoothed)
         return cns_smoothed

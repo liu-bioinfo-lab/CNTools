@@ -104,5 +104,5 @@ class CFIDF(Base):
 
         self.feats = feats_normed
         if self.verbose:
-            cns_info(ds, self.n_cns, cns)
+            cns_info(ds.data, self.n_cns, cns)
         return cns
