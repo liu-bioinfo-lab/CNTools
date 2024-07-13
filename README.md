@@ -1,7 +1,7 @@
 # CNTools
 
 ## System requirements
-The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems. The version tested is v2.1.9. *We tested on MacOS M1 Pro, Sonoma 14.4.1, conda 23.5.1, Clang 15.0.7; Dell Precision 3440, Windows 11 Enterprise, conda 23.11.0, MSVC 14.36.32532.0; Red Hat Enterprise Linux 7, conda 24.3.0, GCC 11.2.0. We recommand using a C++ compiler older than or equal to ours, in order to aviod possible compiling probles.*
+The software denpendencies are listed in `pyproject.toml`. The software is independent of operating systems except that it needs Rosetta translation to work in macOS with Apple silicon.
 
 ## Installation guide
 As we need a conda package pydot=1.4.2 (not a pip one), the package should be installed by
@@ -10,6 +10,12 @@ conda create -n cntools python=3.8 pydot=1.4.2
 conda activate cntools
 python -m pip install cntools
 ```
+In macOS with Apple silicon, the package should be installed in an x86-64 conda environment by
+```
+CONDA_SUBDIR=osx-64 conda create -n cntools python=3.8 pydot=1.4.2
+conda activate cntools
+python -m pip install cntools
+``` 
 
 ## Instructions for use
 
